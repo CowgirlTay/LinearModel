@@ -24,8 +24,33 @@ plot(SIMS~ARM,data=data)
 
 This scatter plot looks like a linear trend going uphill to the right which is a sign of positively correlated set of data.
 
+The greater the arm strength(ARM) mean the greater the simulator rating(SIMS) will be.
+
+```{r}
+cor(SIMS~ARM,data=data)
+```
+The Number above is the coordination between SIMS and ARM. Correlation is a measure of the linear association of two variables.  
+
+```{r}
+model.1 <- lm(SIMS~ARM,data=data)
+summary.lm(model.1)
+```
+
+The equations is SIMS= -4.095160 + 0.054563 * ARM
+
+```{r}
+newData=data.frame(GRIP=94, ARM=88)
+predict.lm(model.1,newData, interval = "prediction")
+```
+
 
 ## SIMS~GRIP Regression
+
+
+```{r}
+plot(SIMS~GRIP,data=data)
+```
+
 
 
 ## SIMS~Arm+GRIP Regression
