@@ -18,6 +18,12 @@ Then form three regression models; Model1 is SIMS~ARM, Model2 is SIMS~GRIP, and 
 
 ## SIMS~ARM Regression
 
+```{r}
+plot(SIMS~ARM,data=data)
+```
+
+This scatter plot looks like a linear trend going uphill to the right which is a sign of positively correlated set of data.
+
 
 ## SIMS~GRIP Regression
 
