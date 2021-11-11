@@ -55,5 +55,16 @@ plot(SIMS~GRIP,data=data)
 
 ## SIMS~Arm+GRIP Regression
 
+```{r}
+advNN <- ggplot(data,aes(y=SIMS,x=ARM,z=GRIP))
+```
+```{r}
+model.2 <- lm(SIMS~ARM + GRIP,data=data)
+summary.lm(model.2)
+``` 
 
 ## MODEL COMPARISONS
+
+```{r}
+anova(model.1,model.2)
+```
