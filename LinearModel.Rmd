@@ -14,7 +14,7 @@ require(tigerstats)
 
 # Introduction
 
-Then form three regression models; Model1 is SIMS~ARM, Model2 is SIMS~GRIP, and Model3 is SIMS~ARM+GRIP. For each model find a 95% prediction interval of SIMS given a value of 94  for GRIP and 88 for ARM. Compare Model1 with Model3 using anova. Write it up in a markdown document, push the project up to your github account and submit it back to canvas as link. 
+Form three regression models; Model1 is SIMS~ARM, Model2 is SIMS~GRIP, and Model3 is SIMS~ARM+GRIP. For each model find a 95% prediction interval of SIMS given a value of 94  for GRIP and 88 for ARM. Compare Model1 with Model3 using anova.  
 
 ## SIMS~ARM Regression
 
@@ -51,13 +51,16 @@ predict.lm(model.1,newData, interval = "prediction")
 plot(SIMS~GRIP,data=data)
 ```
 
+This scatter plot looks like a linear trend going uphill to the right which is a sign of positively correlated set of data.
 
+The greater the GRIP mean the greater the simulator rating(SIMS) will be.
 
 ## SIMS~Arm+GRIP Regression
 
 ```{r}
 advNN <- ggplot(data,aes(y=SIMS,x=ARM,z=GRIP))
 ```
+
 ```{r}
 model.2 <- lm(SIMS~ARM + GRIP,data=data)
 summary.lm(model.2)
