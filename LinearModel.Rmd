@@ -66,6 +66,8 @@ model.2 <- lm(SIMS~ARM + GRIP,data=data)
 summary.lm(model.2)
 ``` 
 
+The equations is SIMS= 5.433871 + 0.024470 * GRIP
+
 ## MODEL COMPARISONS
 
 ```{r}
